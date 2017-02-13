@@ -1,3 +1,3 @@
-def main() {
-  print("say this instead")
-}
+def runComplimentrApp ():
+  print("running app from compliment file")
+  return
