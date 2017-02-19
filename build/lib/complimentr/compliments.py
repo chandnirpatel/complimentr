@@ -1,3 +1,6 @@
+from complimentr.messageSender import sendCompliment
+
 def runComplimentrApp ():
-  print("running app from compliment file")
+  print("compliment will be sent soon")
+  sendCompliment()
   return

@@ -1,6 +1,7 @@
 from complimentr.messageSender import sendCompliment
 
 def runComplimentrApp ():
-  print("compliment will be sent soon")
+  print("Welcome to complimentr!")
   sendCompliment()
+  print("Compliment sent!")
   return
