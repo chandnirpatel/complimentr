@@ -1,22 +1,28 @@
+import os
+
 from complimentr.ask_user_for_info import askForSettings
 
 def get_account_sid():
-    ACCOUNT_SID = askForSettings("Twilio Account ID: ")
-    return ACCOUNT_SID
+    return os.environ.get(
+        'TWILIO_ACCOUNT_SID',
+        askForSettings("Twilio Account ID: "))
 
 def get_account_auth_token():
-    AUTH_TOKEN = askForSettings("Twilio AUTH_TOKEN: ")
-    return AUTH_TOKEN
+    return os.environ.get(
+        'TWILIO_AUTH_TOKEN',
+        askForSettings("Twilio AUTH_TOKEN: "))
 
 def get_to_phone_number():
-    TO = askForSettings("To Phone Number: ")
-    TO = formatAsPhoneNumber(TO)
-    return TO
+    to_phone = os.environ.get(
+        'TO_PHONE',
+        askForSettings("To Phone Number: "))
+    return formatAsPhoneNumber(to_phone)
 
 def get_senders_phone_number():
-    FROM_ = askForSettings("From Phone Number: ")
-    FROM_ = formatAsPhoneNumber(FROM_)
-    return FROM_
+    from_phone = os.environ.get(
+        'FROM_PHONE',
+        askForSettings("From Phone Number: "))
+    return formatAsPhoneNumber(from_phone)
 
 def formatAsPhoneNumber(userInput):
     phoneNumber = str(userInput)
