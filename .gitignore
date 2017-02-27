@@ -4,3 +4,4 @@ complimentr.egg-info/
 dist/*
 build/*
 .settings
+.env
