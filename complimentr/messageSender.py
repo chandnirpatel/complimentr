@@ -12,7 +12,21 @@ def get_random_compliment_from_list():
         "You're my favorite",
         "I like being with you",
         "You make me smile",
-        "You're absolultely wonderful"
+        "You're absolultely wonderful",
+        "Kiss!!!",
+        "Your smile is contagious",
+        "You're beautiful!",
+        "You look great today",
+        "You're one smart cookie!",
+        "I love you!!!",
+        "Is that your picture next to \"charming\" in the dictionary?",
+        "Your eyes are breath taking",
+        "Being around you makes everything better",
+        "Colors seem brighter when you're around",
+        "Your hair looks stunning",
+        "Being around you is like being on a happy little vacation",
+        "You're gorgeous",
+        "You're my reason to smile"
     ]
     indexForCompliment = math.trunc(np.random.random()*len(compliments))
     return compliments[indexForCompliment]
