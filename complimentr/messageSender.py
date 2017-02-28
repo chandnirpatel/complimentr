@@ -1,18 +1,35 @@
 from twilio.rest import TwilioRestClient
 from complimentr import settings
+import math
+import numpy as np
+
+
+def get_random_compliment_from_list():
+    compliments = [
+        "I think you are so amazing!",
+        "I love you so much",
+        "You're the best",
+        "You're my favorite",
+        "I like being with you",
+        "You make me smile",
+        "You're absolultely wonderful"
+    ]
+    indexForCompliment = math.trunc(np.random.random()*len(compliments))
+    return compliments[indexForCompliment]
+
 
 def sendCompliment():
     account_id = settings.get_account_sid()
     token = settings.get_account_auth_token()
     TO = settings.get_to_phone_number()
     FROM_ = settings.get_senders_phone_number()
+    BODY = get_random_compliment_from_list()
 
     client = TwilioRestClient(account=account_id, token=token)
 
     client.messages.create(
         to=TO,
         from_=FROM_,
-        body="I think you are so amazing!",
-        media_url="https://c1.staticflickr.com/3/2899/14341091933_1e92e62d12_b.jpg",
+        body=BODY,
     )
     return
